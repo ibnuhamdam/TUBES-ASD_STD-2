@@ -16,18 +16,18 @@ void menu(){
     CreateList_r(LR);
     pil = 0;
     while(pil != 13){
-    cout<<"1.) Insert parents\n";
-    cout<<"2.) Insert Childs\n";
-    cout<<"3.) view Parents\n";
-    cout<<"4.) Connecting relation\n";
-    cout<<"5.) View Connected\n";
-    cout<<"6.) Disconnect Relation\n";
-    cout<<"7.) Find Relation \n";
-    cout<<"8.) view Childs\n";
-    cout<<"9.) delete parents\n";
-    cout<<"10.) delete Childs\n";
-    cout<<"11.) Find parents\n";
-    cout<<"12.) Find Childs\n";
+    cout<<"1.) Masukan data Psioteraphy\n";
+    cout<<"2.) Masukan data Pasien\n";
+    cout<<"3.) Tampilkan data Psioteraphy\n";
+    cout<<"4.) Koneksikan \n";
+    cout<<"5.) Tampilkan data koneksi \n";
+    cout<<"6.) Putuskan koneksi \n";
+    cout<<"7.) Cari data koneksi \n";
+    cout<<"8.) Tampilkan data pasien \n";
+    cout<<"9.) Hapus data Psioteraphy \n";
+    cout<<"10.)Hapus data pasien \n";
+    cout<<"11.)Cari data Psioteraphy \n";
+    cout<<"12.)Cari data Pasien \n";
     cout<<"13.) EXIT \n";
     cout<<"Masukan pilihan anda :  ";
     cin>>pil;
@@ -88,7 +88,12 @@ void findrel(){
         }
     }
     else{
-        cout<<"Maaf data tidak ditemukan ";
+        if(info_r(PR).ID != ID1){
+            cout<<"Maaf ID psioteraphy yang anda masukan tidak ada didalam list";
+        }
+        else{
+            cout<<"Maaf, ID Pasien yang anda masukan tidak ada didalam list";
+        }
     }
 }
 void deleterelat(){
@@ -107,74 +112,71 @@ void deleterelat(){
     }
     deleteRel(LR, R);
 };
+void deleteParents(){
+             address_p P;
+             address_r PR;
+             address_r PQ;
+             cout<<"Masukan ID Psioteraphy yang ingin didelete : ";
+             cin>>angka;
+              P = findElm(LP,angka);
+              PR = first_r(LR);
+             while (PR != last_r(LR)){
+                    if(angka == info_r(PR).ID){
+                deletefirst_r(LR,PR);
+                PR = first_r(LR);
+                    }
+             }
+             if (angka == info_r(PR).ID){
+                deleteRel(LR,PR);
+             }
+             deleteID(LP,angka);
+    };
 void findchilds(){
         address_c QC;
-    cout<<"Masukan ID parent yang ingin dicari : ";
+    cout<<"Masukan ID pasien yang ingin dicari : ";
     cin>>idc;
     QC = findElm_c(LC,idc);
     if(QC == NULL){
-        cout<<"Maaf child yang anda cari tidak ada \n";
+        cout<<"Maaf data pasien yang anda cari tidak ada \n";
     }
     else if(info_c(QC).ID != idc){
-        cout<<"ID child yang anda cari tidak ditemukan \n";
+        cout<<"ID pasien yang anda cari tidak ditemukan \n";
     }
     else{
-            cout<<"Parents yang anda cari tersedia dalam list \n";
+            cout<<"Data pasien yang anda cari tersedia dalam list \n";
         cout<<"Apakah anda ingin melihatnya ? (Y/T) \n";
         cin>>u;
         if (u == "Y" || u == "y"){
-            address_c QC;
-            QC = first(LC);
-            if ((QC) == first(LC)){
                 cout<<"----------"<<endl;
                 cout<<"ID       :"<<info_c(QC).ID<<endl;
                 cout<<"Nama     :"<<info_c(QC).nama<<endl;
                 cout<<"Alamat   :"<<info_c(QC).alamat<<endl;
                 cout<<"No HP    :"<<info_c(QC).nohp<<endl;
                 cout<<"Gender   :"<<info_c(QC).gender<<endl;
-            }
-            else{
-            while(next(QC) != last(LC)){
-                    if (info_c(QC).ID == idc){
-                cout<<"----------"<<endl;
-                cout<<"ID       :"<<info_c(QC).ID<<endl;
-                cout<<"Nama     :"<<info_c(QC).nama<<endl;
-                cout<<"Alamat   :"<<info_c(QC).alamat<<endl;
-                cout<<"No HP    :"<<info_c(QC).nohp<<endl;
-                cout<<"Gender   :"<<info_c(QC).gender<<endl;
-                    }
-                    QC = next(QC);
-            }
-            if (info_c(QC).ID == idc){
-                cout<<"----------"<<endl;
-                cout<<"ID       :"<<info_c(QC).ID<<endl;
-                cout<<"Nama     :"<<info_c(QC).nama<<endl;
-                cout<<"Alamat   :"<<info_c(QC).alamat<<endl;
-                cout<<"No HP    :"<<info_c(QC).nohp<<endl;
-                cout<<"Gender   :"<<info_c(QC).gender<<endl;
-                    }
-            }
+
         }
     }
 };
 void deletechilds(){
     address_c PC;
-    cout<<"Masukan ID child yang ingin dihapus : ";
+    cout<<"Masukan ID pasien yang ingin dihapus : ";
     cin>>chil;
     cout<<"okay\n";
     deleteID_c(LC,chil);
 };
 void insertchilds(){
     address_c PC;
-    cout<<"Masukan ID Parent : ";
+    address_c P;
+    bool ok;
+    cout<<"Masukan ID Pasien : ";
              cin>>q;
-             cout<<"Masukan nama Parent : ";
+             cout<<"Masukan nama Pasien : ";
              cin>>t;
-             cout<<"Masukan alamat Parent : ";
+             cout<<"Masukan alamat Pasien : ";
              cin>>w;
-             cout<<"Masukan no hp Parent : ";
+             cout<<"Masukan no hp Pasien : ";
              cin>>x;
-             cout<<"Masukan Gender Parent : ";
+             cout<<"Masukan Gender Pasien : ";
              cin>>y;
             PC = alokasi_c(q,t,w,x,y);
         if (first(LC) == NULL){
@@ -192,15 +194,15 @@ void insertchilds(){
 }
 void insertParents(){
     address_p P;
-        cout<<"Masukan ID Parent : ";
+        cout<<"Masukan ID Psioteraphy : ";
              cin>>a;
-             cout<<"Masukan nama Parent : ";
+             cout<<"Masukan nama Psioteraphy : ";
              cin>>b;
-             cout<<"Masukan alamat Parent : ";
+             cout<<"Masukan alamat Psioteraphy : ";
              cin>>c;
-             cout<<"Masukan no hp Parent : ";
+             cout<<"Masukan no hp Psioteraphy: ";
              cin>>d;
-             cout<<"Masukan Gender Parent : ";
+             cout<<"Masukan Gender Psioteraphy: ";
              cin>>e;
              if (first(LP) == NULL){
                 insertAscending(LP,a,b,c,d,e);
@@ -223,11 +225,7 @@ void viewchilds(){
      printInfo_c(LC);
              cout<<endl;
 }
-void deleteParents(){
-             cout<<"Masukan ID parent yang ingin didelete : ";
-             cin>>angka;
-             deleteID(LP,angka);
-    };
+
 void connectrel(){
     address_p P;
     address_c C;
@@ -238,25 +236,34 @@ void connectrel(){
     cin>>pasien;
     P = findElm(LP,psi);
     C = findElm_c(LC,pasien);
+    if (info(P).ID == psi && info_c(C).ID == pasien){
     PR = alokasi_r(P,C);
-    insertfirst(LR,PR);
+    insertLast(LR,PR);
+    }
+    else{
+        if(info(P).ID != psi){
+            cout<<"Maaf ID psioteraphy yang anda masukan salah";
+        }
+        else{}
+        cout<<"Maaf ID Pasien yang anda masukan salah";
+    }
 };
 void viewconnected(){
     printInfo_r(LR);
 };
 void FindParents(){
     address_p Q;
-    cout<<"Masukan ID parent yang ingin dicari : ";
+    cout<<"Masukan ID Psioteraphy yang ingin dicari : ";
     cin>>id;
     Q = findElm(LP,id);
     if(Q == NULL){
-        cout<<"Maaf parents yang anda cari tidak ada \n";
+        cout<<"Maaf Data Psioteraphy yang anda cari tidak ada \n";
     }
     else if(info(Q).ID != id){
-        cout<<"ID parent yang anda cari tidak ditemukan \n";
+        cout<<"ID Psioteraphy yang anda cari tidak ditemukan \n";
     }
     else{
-            cout<<"Parents yang anda cari tersedia dalam list \n";
+            cout<<"Psioteraphy yang anda cari tersedia dalam list \n";
         cout<<"Apakah anda ingin melihatnya ? (Y/T) \n";
         cin>>u;
         if (u == "Y" || u == "y"){

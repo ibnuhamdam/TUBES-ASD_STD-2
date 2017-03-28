@@ -71,3 +71,39 @@
 1490694914 source:g:\tubes asd_std 2\relasi.cpp
 	"Relasi.h"
 
+1490516008 source:e:\smtr 2\asd\tubes asd_std 2\main.cpp
+	<iostream>
+	"singlecircular.h"
+	"program.h"
+	"Childs.h"
+
+1490517302 e:\smtr 2\asd\tubes asd_std 2\singlecircular.h
+	<iostream>
+
+1490689324 e:\smtr 2\asd\tubes asd_std 2\program.h
+	<iostream>
+
+1490634976 e:\smtr 2\asd\tubes asd_std 2\childs.h
+	<iostream>
+
+1490719450 source:e:\smtr 2\asd\tubes asd_std 2\parents.cpp
+	"singlecircular.h"
+
+1490719450 source:e:\smtr 2\asd\tubes asd_std 2\relasi.cpp
+	"Relasi.h"
+
+1490694212 e:\smtr 2\asd\tubes asd_std 2\relasi.h
+	"Childs.h"
+	"singlecircular.h"
+	"Relasi.h"
+
+1490719450 source:e:\smtr 2\asd\tubes asd_std 2\childs.cpp
+	"Childs.h"
+	"singlecircular.h"
+
+1490719010 source:e:\smtr 2\asd\tubes asd_std 2\program.cpp
+	"program.h"
+	"singlecircular.h"
+	"Childs.h"
+	"Relasi.h"
+

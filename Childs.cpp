@@ -113,18 +113,12 @@ void printInfo_c(List_c LC){
         cout<<"----------"<<endl;
             cout<<"ID       :"<<info_c(C).ID<<endl;
             cout<<"Nama     :"<<info_c(C).nama<<endl;
-            cout<<"Alamat   :"<<info_c(C).alamat<<endl;
-            cout<<"No HP    :"<<info_c(C).nohp<<endl;
-            cout<<"Gender   :"<<info_c(C).gender<<endl;
         C = next(C);
         i = i+1;
     }cout<<"List Pasien ke-"<<i<<endl;
     cout<<"----------"<<endl;
             cout<<"ID       :"<<info_c(C).ID<<endl;
             cout<<"Nama     :"<<info_c(C).nama<<endl;
-            cout<<"Alamat   :"<<info_c(C).alamat<<endl;
-            cout<<"No HP    :"<<info_c(C).nohp<<endl;
-            cout<<"Gender   :"<<info_c(C).gender<<endl;
     }
 };
 void insertAscending_c(List_c &LC, int ID, string nama,string alamat, string nohp, string gender){
@@ -167,10 +161,10 @@ void deleteID_c(List_c &LC, int x){
                 cout<<"Data telah dihapus\n";
             }
             else{
-                cout<<"ID tidak ditemukan";
+                cout<<"ID tidak ditemukan \n";
             }
             }
             else{
-                cout<<"Data kosong";
+                cout<<"Data kosong \n";
             }
 };

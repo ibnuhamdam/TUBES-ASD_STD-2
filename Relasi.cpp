@@ -55,17 +55,19 @@ void dealokasi(address_r &PR){
     delete PR;
 };
 void insertLast(List_r &LR, address_r PR){
-    address_r R;
-    address_p P;
-    address_c C;
-    R = first_r(LR);
-    PR = alokasi_r(P,C);
+    if (first_r(LR) == NULL){
+        first_r(LR) = PR;
+        last_r(LR) = PR;
+    }
+    else{
+    address_r R = first_r(LR);
     while(R != last_r(LR)){
         R = next_r(R);
-    };
+    }
     next_r(R) = PR;
     prev_r(PR) = R;
     last_r(LR) = PR;
+    }
 };
 address_r findElm_r(List_r LR, int ID, int ID2){
     address_r PR = first_r(LR);
@@ -84,32 +86,24 @@ void printInfo_r(List_r LR){
     int i;
     i = 1;
     if (first_r(LR) == NULL){
-        cout<<"data kosong";
+        cout<<"data kosong \n";
     }
     else{
     address_r PR;
     PR = first_r(LR);
     while(PR != last_r(LR)){
-        cout<<"List Pasien ke-"<<i<<"\n";
+        cout<<"List Relasi ke-"<<i<<"\n";
         cout<<"----------"<<endl;
-            cout<<"ID Psioteraphy  :"<<info_r(PR).ID<<endl;
-            cout<<"Nama Psioteraphy:"<<info_r(PR).Nama<<endl;
-            cout<<"      |     "<<endl;
-            cout<<"      |     "<<endl;
-            cout<<"      V     "<<endl;
+            cout<<"ID Psioteraphy  :"<<info_r(PR).ID;
+            cout<<"  -  ";
             cout<<"ID Pasien       :"<<info_r(PR).ID2<<endl;
-            cout<<"Nama Pasien     :"<<info_r(PR).Nama2<<endl;
         PR = next_r(PR);
         i = i+1;
-    }cout<<"List Pasien ke-"<<i<<endl;
+    }cout<<"List Relasi ke-"<<i<<endl;
     cout<<"----------"<<endl;
-            cout<<"ID Psioteraphy  :"<<info_r(PR).ID<<endl;
-            cout<<"Nama Psioteraphy:"<<info_r(PR).Nama<<endl;
-            cout<<"      |     "<<endl;
-            cout<<"      |     "<<endl;
-            cout<<"      V     "<<endl;
+            cout<<"ID Psioteraphy  :"<<info_r(PR).ID;
+            cout<<"  -  ";
             cout<<"ID Pasien       :"<<info_r(PR).ID2<<endl;
-            cout<<"Nama Pasien     :"<<info_r(PR).Nama2<<endl;
     }
 };
 void insertfirst(List_r &LR, address_r PR){

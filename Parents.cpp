@@ -101,7 +101,7 @@ void deleteID(List_p &LP, int x){
     }
     }
     else{
-        cout<<"Data kosong";
+        cout<<"Data kosong \n";
     }
 }
 void deleteAfter(List_p &LP, address_p &Prec, address_p &P){
@@ -156,18 +156,12 @@ void printInfo(List_p LP){
         cout<<"----------"<<endl;
             cout<<"ID       :"<<info(Q).ID<<endl;
             cout<<"Nama     :"<<info(Q).nama<<endl;
-            cout<<"Alamat   :"<<info(Q).alamat<<endl;
-            cout<<"No HP    :"<<info(Q).nohp<<endl;
-            cout<<"Gender   :"<<info(Q).gender<<endl;
         Q = next(Q);
         i = i+1;
     }cout<<"List Psioteraphist ke-"<<i<<endl;
     cout<<"----------"<<endl;
             cout<<"ID       :"<<info(Q).ID<<endl;
             cout<<"Nama     :"<<info(Q).nama<<endl;
-            cout<<"Alamat   :"<<info(Q).alamat<<endl;
-            cout<<"No HP    :"<<info(Q).nohp<<endl;
-            cout<<"Gender   :"<<info(Q).gender<<endl;
     }
 };
 void insertAfter(List_p &LP, int Prec, address_p P){
