@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1490516007 source:e:\smtr 2\asd\tubes2\main.cpp
+	<iostream>
+	"singlecircular.h"
+	"program.h"
+	"Childs.h"
+
+1490519249 source:e:\smtr 2\asd\tubes2\parents.cpp
+	"singlecircular.h"
+
+1490517300 e:\smtr 2\asd\tubes2\singlecircular.h
+	<iostream>
+
+1490694683 source:e:\smtr 2\asd\tubes2\program.cpp
+	"program.h"
+	"singlecircular.h"
+	"Childs.h"
+	"Relasi.h"
+
+1490689322 e:\smtr 2\asd\tubes2\program.h
+	<iostream>
+
+1490686461 source:e:\smtr 2\asd\tubes2\childs.cpp
+	"Childs.h"
+	"singlecircular.h"
+
+1490694418 source:e:\smtr 2\asd\tubes2\relasi.cpp
+	"Relasi.h"
+
+1490694210 e:\smtr 2\asd\tubes2\relasi.h
+	"Childs.h"
+	"singlecircular.h"
+	"Relasi.h"
+
+1490634975 e:\smtr 2\asd\tubes2\childs.h
+	<iostream>
+
+1490686462 source:g:\tubes asd_std 2\childs.cpp
+	"Childs.h"
+	"singlecircular.h"
+
+1490634976 g:\tubes asd_std 2\childs.h
+	<iostream>
+
+1490517302 g:\tubes asd_std 2\singlecircular.h
+	<iostream>
+
+1490516008 source:g:\tubes asd_std 2\main.cpp
+	<iostream>
+	"singlecircular.h"
+	"program.h"
+	"Childs.h"
+
+1490689324 g:\tubes asd_std 2\program.h
+	<iostream>
+
+1490519250 source:g:\tubes asd_std 2\parents.cpp
+	"singlecircular.h"
+
+1490694914 source:g:\tubes asd_std 2\program.cpp
+	"program.h"
+	"singlecircular.h"
+	"Childs.h"
+	"Relasi.h"
+
+1490694212 g:\tubes asd_std 2\relasi.h
+	"Childs.h"
+	"singlecircular.h"
+	"Relasi.h"
+
+1490694914 source:g:\tubes asd_std 2\relasi.cpp
+	"Relasi.h"
+
