@@ -2,7 +2,7 @@
 #define CHILDS_H_INCLUDED
 #include <iostream>
 
-
+/*/ Ayatullah naufal, NIM : 1301164117 /*/
 #define Nil NULL
 #define next(P) (P)->next
 #define prev(P) (P)->prev

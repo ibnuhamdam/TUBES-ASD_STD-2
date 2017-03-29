@@ -1,6 +1,7 @@
 #ifndef SINGLECIRCULAR_H_INCLUDED
 #define SINGLECIRCULAR_H_INCLUDED
 #include <iostream>
+// Ibnu Hamdam , NIM : 1301164177
 
 #define Nil NULL
 #define next(P) (P)->next

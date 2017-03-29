@@ -80,13 +80,15 @@
 1490517302 e:\smtr 2\asd\tubes asd_std 2\singlecircular.h
 	<iostream>
 
-1490689324 e:\smtr 2\asd\tubes asd_std 2\program.h
+1490792986 e:\smtr 2\asd\tubes asd_std 2\program.h
 	<iostream>
+	<stdlib.h>
+	<conio.h>
 
 1490634976 e:\smtr 2\asd\tubes asd_std 2\childs.h
 	<iostream>
 
-1490719450 source:e:\smtr 2\asd\tubes asd_std 2\parents.cpp
+1490785936 source:e:\smtr 2\asd\tubes asd_std 2\parents.cpp
 	"singlecircular.h"
 
 1490719450 source:e:\smtr 2\asd\tubes asd_std 2\relasi.cpp
@@ -97,11 +99,11 @@
 	"singlecircular.h"
 	"Relasi.h"
 
-1490719450 source:e:\smtr 2\asd\tubes asd_std 2\childs.cpp
+1490802387 source:e:\smtr 2\asd\tubes asd_std 2\childs.cpp
 	"Childs.h"
 	"singlecircular.h"
 
-1490719010 source:e:\smtr 2\asd\tubes asd_std 2\program.cpp
+1490802463 source:e:\smtr 2\asd\tubes asd_std 2\program.cpp
 	"program.h"
 	"singlecircular.h"
 	"Childs.h"

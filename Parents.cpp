@@ -4,9 +4,11 @@ using namespace std;
 string nama,alamat,nohp,gender,h,j,k,l;
 int ID,g;
 void CreateList(List_p &LP){
+    // Ibnu Hamdam , NIM : 1301164177
     first(LP) = NULL;
 };
 address_p alokasi(int ID, string nama, string alamat, string nohp, string gender){
+    // Ibnu Hamdam , NIM : 1301164177
     address_p P;
     P = new elmlist_p;
     info(P).ID = ID;
@@ -18,9 +20,11 @@ address_p alokasi(int ID, string nama, string alamat, string nohp, string gender
         return P;
 };
 void dealokasi(address_p &P){
+    // Ibnu Hamdam , NIM : 1301164177
     delete P;
 };
 void insertFirst(List_p &LP, address_p P){
+    // Ibnu Hamdam , NIM : 1301164177
         if (first(LP) == NULL){
             first(LP) = P;
             next(P) = first(LP);
@@ -36,6 +40,7 @@ void insertFirst(List_p &LP, address_p P){
         }
 };
 void insertLast(List_p &LP, address_p P){
+    // Ibnu Hamdam , NIM : 1301164177
     if (first(LP) == NULL){
         first(LP) = P;
         next(P) = first(LP);
@@ -50,6 +55,7 @@ void insertLast(List_p &LP, address_p P){
     }
 };
 address_p findElm(List_p LP, int x){
+    // Ibnu Hamdam , NIM : 1301164177
     address_p Q = first(LP);
     if (first(LP) == NULL){
         Q = NULL;
@@ -62,6 +68,7 @@ address_p findElm(List_p LP, int x){
     return Q;
 };
 void deleteFirst(List_p &LP, address_p &P){
+    // Ibnu Hamdam , NIM : 1301164177
     if (first(LP) == NULL){
 
     }
@@ -84,6 +91,7 @@ void deleteFirst(List_p &LP, address_p &P){
     }
 };
 void deleteID(List_p &LP, int x){
+    // Ibnu Hamdam , NIM : 1301164177
     address_p P;
     if (first(LP) != NULL){
     P = findElm(LP,x);
@@ -105,8 +113,12 @@ void deleteID(List_p &LP, int x){
     }
 }
 void deleteAfter(List_p &LP, address_p &Prec, address_p &P){
+    // Ibnu Hamdam , NIM : 1301164177
     P = first(LP);
-    if(next(P) == first(LP)){
+    if (first(LP) == NULL){
+        cout<<"Data kosong \n";
+    }
+    else if(next(P) == first(LP)){
         deleteFirst(LP,P);
     }
     else{
@@ -118,6 +130,7 @@ void deleteAfter(List_p &LP, address_p &Prec, address_p &P){
 
 };
 void deleteLast(List_p &LP, address_p &P){
+    // Ibnu Hamdam , NIM : 1301164177
     address_p Q;
     if (first(LP) == NULL){
 
@@ -143,6 +156,7 @@ void deleteLast(List_p &LP, address_p &P){
     }
 };
 void printInfo(List_p LP){
+    // Ibnu Hamdam , NIM : 1301164177
     int i;
     i = 1;
     if (first(LP) == NULL){
@@ -165,6 +179,7 @@ void printInfo(List_p LP){
     }
 };
 void insertAfter(List_p &LP, int Prec, address_p P){
+    // Ibnu Hamdam , NIM : 1301164177
     address_p Q;
     Q = first(LP);
     while(info(Q).ID != Prec){
@@ -174,6 +189,7 @@ void insertAfter(List_p &LP, int Prec, address_p P){
     next(Q) = P;
  };
  void insertAscending(List_p &LP, int ID, string nama,string alamat, string nohp, string gender){
+     // Ibnu Hamdam , NIM : 1301164177
     address_p P,Q;
     int prec;
     g = ID;

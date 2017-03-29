@@ -2,7 +2,7 @@
 #include "singlecircular.h"
 #include "Childs.h"
 #include "Relasi.h"
-
+// Ibnu Hamdam , NIM : 1301164177
 address_p P,Q;
 int pil,a,q,angka,id,idc,p,chil,psi,pasien,nom,nim,ID1,ID2;
 string b,t,w,x,y,c,d,e,u;
@@ -57,6 +57,8 @@ void menu(){
     case 12 : findchilds();
              break;
     };
+    getche();
+    system("cls");
     }
 };
 void findrel(){
@@ -107,10 +109,15 @@ void deleterelat(){
     PR = findElm(LP,nom);
     CR = findElm_c(LC,nim);
     R = first_r(LR);
+    if(info(PR).ID == nom && info_c(CR).ID == nim){
     while(info_r(R).ID != nom || info_r(R).ID2 != nim){
         R = next_r(R);
     }
     deleteRel(LR, R);
+    }
+    else{
+        cout<<"Data kosong";
+    }
 };
 void deleteParents(){
              address_p P;
@@ -120,15 +127,17 @@ void deleteParents(){
              cin>>angka;
               P = findElm(LP,angka);
               PR = first_r(LR);
-             while (PR != last_r(LR)){
+              if (first_r(LR) != NULL){
+              while (PR != last_r(LR)){
                     if(angka == info_r(PR).ID){
                 deletefirst_r(LR,PR);
                 PR = first_r(LR);
-                    }
+                   }
              }
              if (angka == info_r(PR).ID){
                 deleteRel(LR,PR);
              }
+              };
              deleteID(LP,angka);
     };
 void findchilds(){
@@ -161,13 +170,25 @@ void deletechilds(){
     address_c PC;
     cout<<"Masukan ID pasien yang ingin dihapus : ";
     cin>>chil;
-    cout<<"okay\n";
-    deleteID_c(LC,chil);
+    cout<<" --- \n";
+    PC = findElm_c(LC,chil);
+             address_r PR = first_r(LR);
+              if (first_r(LR) != NULL){
+              while (PR != last_r(LR)){
+                    if(chil == info_r(PR).ID2){
+                deletefirst_r(LR,PR);
+                PR = first_r(LR);
+                   }
+             }
+             if (chil == info_r(PR).ID2){
+                deleteRel(LR,PR);
+             }
+              };
+             deleteID_c(LC,chil);
 };
 void insertchilds(){
     address_c PC;
     address_c P;
-    bool ok;
     cout<<"Masukan ID Pasien : ";
              cin>>q;
              cout<<"Masukan nama Pasien : ";
@@ -185,7 +206,7 @@ void insertchilds(){
              else{
                 PC = findElm_c(LC, q);
                     if (info_c(PC).ID != q){
-             insertAscending_c(LC, q,t,w,x,y);
+             insertAscending_c(LC,q,t,w,x,y);
                     }
                     else{
             cout<<"ID duplicate\n";

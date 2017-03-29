@@ -3,11 +3,13 @@
 using namespace std;
 
 void CreateList_c(List_c &LC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     first(LC) = NULL;
     last(LC) = NULL;
 };
 
 address_c alokasi_c(int ID, string nama, string alamat, string nohp, string gender){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     address_c PC;
     PC = new elmlist_c;
     info_c(PC).ID = ID;
@@ -20,9 +22,11 @@ address_c alokasi_c(int ID, string nama, string alamat, string nohp, string gend
         return PC;
 };
 void dealokasi_c(address_c &PC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     delete PC;
 };
 void insertFirst_c(List_c &LC, address_c PC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     if (first(LC) == NULL){
         first(LC) = PC;
         last(LC) = PC;
@@ -34,6 +38,7 @@ void insertFirst_c(List_c &LC, address_c PC){
     }
 };
 void insertAfter_c(List_c &LC, address_c Precc, address_c PC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     if (first(LC) == NULL){
         PC = first(LC);
         PC = last(LC);
@@ -51,6 +56,7 @@ void insertAfter_c(List_c &LC, address_c Precc, address_c PC){
     }
 };
 address_c findElm_c(List_c LC, int x){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     address_c C = first(LC);
     if (first(LC) == NULL){
         C = NULL;
@@ -59,13 +65,14 @@ address_c findElm_c(List_c LC, int x){
         C = first(LC);
     }
     else{
-        while (info_c(C).ID != x && (C) != last(LC)){
+        while (info_c(C).ID != x && C != last(LC)){
             C = next(C);
         }
     }
     return C;
 };
 void deleteFirst_c(List_c &LC, address_c &PC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     PC = first(LC);
     if (first(LC) == NULL){
         cout<<"Data kosong \n";
@@ -82,7 +89,32 @@ void deleteFirst_c(List_c &LC, address_c &PC){
         dealokasi_c(PC);
     }
 };
+void deleteLast_c(List_c &LC, address_c &PC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
+    address_c QC;
+    if (first(LC) == NULL){
+
+    }
+    else if((first(LC)) == last(LC)){
+        deleteFirst_c(LC,PC);
+    }
+    else{
+        PC = first(LC);
+        QC = first(LC);
+        while(QC != last(LC)){
+            QC = next(QC);
+        }
+        while((next(PC)) != last(LC)){
+            PC = next(PC);
+        }
+        next(PC) = NULL;
+        prev(QC) = NULL;
+        last(LC) = PC;
+        dealokasi_c(QC);
+    }
+};
 void deleteafter_c(List_c &LC, address_c &Precc, address_c &PC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     PC = first(LC);
     if (first(LC) == NULL){
         cout<<"Data kosong \n";
@@ -90,16 +122,18 @@ void deleteafter_c(List_c &LC, address_c &Precc, address_c &PC){
     else if(PC == first(LC)){
         deleteFirst_c(LC,PC);
     }
+    else if(PC == last(LC)){
+        deleteLast_c(LC,PC);
+    }
     else{
         PC = next(Precc);
         next(Precc) = next(PC);
-        prev(next(PC)) = Precc;
         next(PC) = NULL;
-        prev(PC) = NULL;
         dealokasi_c(PC);
     }
 }
 void printInfo_c(List_c LC){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     int i;
     i = 1;
     if (first(LC) == NULL){
@@ -122,6 +156,7 @@ void printInfo_c(List_c LC){
     }
 };
 void insertAscending_c(List_c &LC, int ID, string nama,string alamat, string nohp, string gender){
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
     address_c PC,C;
     int v;
     string w,x,y,z;
@@ -143,28 +178,29 @@ void insertAscending_c(List_c &LC, int ID, string nama,string alamat, string noh
     }
 };
 void deleteID_c(List_c &LC, int x){
-        address_c PC;
-            if (first(LC) != NULL){
-            PC = findElm_c(LC,x);
-            if (info_c(PC).ID == x){
-                address_c QC;
-                QC = first(LC);
-                if (next(QC) == NULL){
-                    QC = first(LC);
-                }
-                else{
-                while(next(QC) != PC){
-                    QC = next(QC);
-                }
-                }
-                deleteafter_c(LC,QC,PC);
-                cout<<"Data telah dihapus\n";
-            }
-            else{
-                cout<<"ID tidak ditemukan \n";
-            }
-            }
-            else{
-                cout<<"Data kosong \n";
-            }
+    /*/ Ayatullah naufal, NIM : 1301164117 /*/
+    address_c PC;
+    if (first(LC) != NULL){
+    PC = findElm_c(LC,x);
+    if (info_c(PC).ID == x){
+        address_c QC;
+        if(PC == last(LC)){
+            deleteLast_c(LC,PC);
+        }
+        else{
+        QC = first(LC);
+        while(next(QC) != PC){
+            QC = next(QC);
+        };
+        deleteafter_c(LC,QC,PC);
+        cout<<"Data telah dihapus\n";
+        }
+    }
+    else{
+        cout<<"ID tidak ditemukan";
+    }
+    }
+    else{
+        cout<<"Data kosong \n";
+    }
 };

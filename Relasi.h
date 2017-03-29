@@ -3,7 +3,7 @@
 #include "Childs.h"
 #include "singlecircular.h"
 #include "Relasi.h"
-
+// Ibnu Hamdam , NIM : 1301164177
 #define Nil NULL
 #define next_r(P) (P)->next_r
 #define prev_r(P) (P)->prev_r

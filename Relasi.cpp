@@ -3,10 +3,12 @@
 using namespace std;
 
 void CreateList_r(List_r &LR){
+    // Ibnu Hamdam , NIM : 1301164177
     first_r(LR) = NULL;
     last_r(LR)  = NULL;
 };
 void deletefirst_r(List_r &LR,address_r PR){
+    // Ibnu Hamdam , NIM : 1301164177
     PR = first_r(LR);
     if (first_r(LR) == NULL){
         cout<<"Data kosong \n";
@@ -24,6 +26,7 @@ void deletefirst_r(List_r &LR,address_r PR){
     }
 }
 void deleteRel(List_r &LR, address_r PR){
+    // Ibnu Hamdam , NIM : 1301164177
     if (first_r(LR) == NULL){
         cout<<"Data kosong";
     }
@@ -41,6 +44,7 @@ void deleteRel(List_r &LR, address_r PR){
     }
 };
 address_r alokasi_r(address_p P, address_c C){
+    // Ibnu Hamdam , NIM : 1301164177
     address_r PR;
     PR = new elmlist_r;
     info_r(PR).ID = info(P).ID;
@@ -52,9 +56,11 @@ address_r alokasi_r(address_p P, address_c C){
 
 };
 void dealokasi(address_r &PR){
+    // Ibnu Hamdam , NIM : 1301164177
     delete PR;
 };
 void insertLast(List_r &LR, address_r PR){
+    // Ibnu Hamdam , NIM : 1301164177
     if (first_r(LR) == NULL){
         first_r(LR) = PR;
         last_r(LR) = PR;
@@ -70,6 +76,7 @@ void insertLast(List_r &LR, address_r PR){
     }
 };
 address_r findElm_r(List_r LR, int ID, int ID2){
+    // Ibnu Hamdam , NIM : 1301164177
     address_r PR = first_r(LR);
     if (first_r(LR) == NULL){
         PR = NULL;
@@ -83,6 +90,7 @@ address_r findElm_r(List_r LR, int ID, int ID2){
     return PR;
 };
 void printInfo_r(List_r LR){
+    // Ibnu Hamdam , NIM : 1301164177
     int i;
     i = 1;
     if (first_r(LR) == NULL){
@@ -107,6 +115,7 @@ void printInfo_r(List_r LR){
     }
 };
 void insertfirst(List_r &LR, address_r PR){
+    // Ibnu Hamdam , NIM : 1301164177
     if (first_r(LR) == NULL){
         first_r(LR) = PR;
         last_r(LR) = PR;
